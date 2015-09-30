@@ -1,3 +1,11 @@
-// Place all the styles related to the raygun controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#raygun-errors {
+  .message {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  pre > code {
+    overflow: auto;
+  }
+}
