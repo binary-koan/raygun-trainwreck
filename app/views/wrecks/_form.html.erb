@@ -1,33 +1,47 @@
 <%= form_for(@wreck) do |f| %>
-  <% if @wreck.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@wreck.errors.count, "error") %> prohibited this wreck from being saved:</h2>
+  <div class="row">
+    <% if @wreck.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@wreck.errors.count, "error") %> prohibited this wreck from being saved:</h2>
+  
+        <ul>
+        <% @wreck.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
 
-      <ul>
-      <% @wreck.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+    <%= f.label :message %>
+    <%= f.text_field :message, class: 'u-full-width' %>
+  </div>
+  
+  <div class="row">
+    <div class="four columns">
+      <%= f.label :is_epic do %>
+        <%= f.check_box :is_epic %>
+        <span class="label-body">Epic?</span>
       <% end %>
-      </ul>
     </div>
-  <% end %>
+    
+    <div class="four columns">
+      <%= f.label :is_boring do %>
+        <%= f.check_box :is_boring %>
+        <span class="label-body">Boring?</span>
+      <% end %>
+    </div>
+    
+    <div class="four columns">
+      <%= f.label :is_spectacular do %>
+        <%= f.check_box :is_spectacular %>
+        <span class="label-body">Spectacular?</span>
+      <% end %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :message %><br>
-    <%= f.text_field :message %>
-  </div>
-  <div class="field">
-    <%= f.label :is_epic %><br>
-    <%= f.check_box :is_epic %>
-  </div>
-  <div class="field">
-    <%= f.label :is_boring %><br>
-    <%= f.check_box :is_boring %>
-  </div>
-  <div class="field">
-    <%= f.label :is_spectacular %><br>
-    <%= f.check_box :is_spectacular %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="row">
+    <div class="twelve columns actions">
+      <%= f.submit class: 'button-primary' %>
+    </div>
   </div>
 <% end %>
