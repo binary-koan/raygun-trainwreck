@@ -49,3 +49,7 @@ group :development do
   gem 'spring'
 end
 
+source 'https://rails-assets.org' do
+  gem 'rails-assets-better-dom'
+  gem 'rails-assets-mithril'
+end
