@@ -52,4 +52,5 @@ end
 source 'https://rails-assets.org' do
   gem 'rails-assets-better-dom'
   gem 'rails-assets-mithril'
+  gem 'rails-assets-skeleton'
 end

@@ -102,6 +102,7 @@ GEM
       sprockets-rails
     rails-assets-better-dom (2.1.4)
     rails-assets-mithril (0.2.0)
+    rails-assets-skeleton (2.0.4)
     rails-deprecated_sanitizer (1.0.3)
       activesupport (>= 4.2.0.alpha)
     rails-dom-testing (1.0.7)
@@ -166,6 +167,7 @@ DEPENDENCIES
   rails (= 4.2.4)
   rails-assets-better-dom!
   rails-assets-mithril!
+  rails-assets-skeleton!
   raygun4ruby
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
