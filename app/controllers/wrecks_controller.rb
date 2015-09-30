@@ -19,6 +19,11 @@ class WrecksController < ApplicationController
 
   # GET /wrecks/1/edit
   def edit
+    # Let's be sneaky and track how often people edit stuff. Obviously this is
+    # the perfect way to do that
+    Raygun.track_exception(StandardError.new('Someone is editing a wreck!'), custom_data: {
+      wreck: @wreck # What happens if you put an object as the custom data?
+    })
   end
 
   # POST /wrecks
