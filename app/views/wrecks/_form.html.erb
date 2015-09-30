@@ -1,0 +1,33 @@
+<%= form_for(@wreck) do |f| %>
+  <% if @wreck.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@wreck.errors.count, "error") %> prohibited this wreck from being saved:</h2>
+
+      <ul>
+      <% @wreck.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :message %><br>
+    <%= f.text_field :message %>
+  </div>
+  <div class="field">
+    <%= f.label :is_epic %><br>
+    <%= f.check_box :is_epic %>
+  </div>
+  <div class="field">
+    <%= f.label :is_boring %><br>
+    <%= f.check_box :is_boring %>
+  </div>
+  <div class="field">
+    <%= f.label :is_spectacular %><br>
+    <%= f.check_box :is_spectacular %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Message:</strong>
+  <%= @wreck.message %>
+</p>
+
+<p>
+  <strong>Is epic:</strong>
+  <%= @wreck.is_epic %>
+</p>
+
+<p>
+  <strong>Is boring:</strong>
+  <%= @wreck.is_boring %>
+</p>
+
+<p>
+  <strong>Is spectacular:</strong>
+  <%= @wreck.is_spectacular %>
+</p>
+
+<%= link_to 'Edit', edit_wreck_path(@wreck) %> |
+<%= link_to 'Back', wrecks_path %>

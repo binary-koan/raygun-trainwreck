@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Wrecks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Message</th>
+      <th>Is epic</th>
+      <th>Is boring</th>
+      <th>Is spectacular</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @wrecks.each do |wreck| %>
+      <tr>
+        <td><%= wreck.message %></td>
+        <td><%= wreck.is_epic %></td>
+        <td><%= wreck.is_boring %></td>
+        <td><%= wreck.is_spectacular %></td>
+        <td><%= link_to 'Show', wreck %></td>
+        <td><%= link_to 'Edit', edit_wreck_path(wreck) %></td>
+        <td><%= link_to 'Destroy', wreck, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Wreck', new_wreck_path %>
