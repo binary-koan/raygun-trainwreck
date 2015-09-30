@@ -24,16 +24,12 @@ class WrecksController < ApplicationController
   # POST /wrecks
   # POST /wrecks.json
   def create
-    @wreck = Wreck.new(wreck_params)
+    # Obviously this is the perfect way to create a wreck
+    @wreck = Wreck.create!(wreck_params)
 
     respond_to do |format|
-      if @wreck.save
-        format.html { redirect_to @wreck, notice: 'Wreck was successfully created.' }
-        format.json { render :show, status: :created, location: @wreck }
-      else
-        format.html { render :new }
-        format.json { render json: @wreck.errors, status: :unprocessable_entity }
-      end
+      format.html { redirect_to @wreck, notice: 'Wreck was successfully created.' }
+      format.json { render :show, status: :created, location: @wreck }
     end
   end
 
@@ -41,7 +37,8 @@ class WrecksController < ApplicationController
   # PATCH/PUT /wrecks/1.json
   def update
     respond_to do |format|
-      if @wreck.update(wreck_params)
+      # Pretty sure Mongoid is smart enough to figure out I mean 'update' ... right?
+      if @wreck.updat(wreck_params)
         format.html { redirect_to @wreck, notice: 'Wreck was successfully updated.' }
         format.json { render :show, status: :ok, location: @wreck }
       else
