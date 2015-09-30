@@ -13,4 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//
+//= require better-dom
+//= require mithril/mithril.js
+//
 //= require_tree .

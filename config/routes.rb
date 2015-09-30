@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root 'wrecks#index'
+  root 'raygun#index'
+  get 'raygun/list'
 
   resources :wrecks
   # The priority is based upon order of creation: first created -> highest priority.
