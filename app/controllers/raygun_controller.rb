@@ -8,6 +8,7 @@ class RaygunController < ApplicationController
     http = Net::HTTP.new(url.host, url.port)
     http.use_ssl = true
     raygun_response = http.get(url.request_uri, {
+      # Hmm ... what havoc can you wreak with my API key?
       'X-ApiKey' => 'PgxyazCgTksjtQwStyRkvw==',
     })
 
