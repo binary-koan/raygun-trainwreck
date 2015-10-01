@@ -1,28 +1,19 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app is designed to test when and how Raygun reports errors in Rails.
+It's a pretty basic setup with Mongoid and one scaffold, but enough to get
+an idea.
 
-Things you may want to cover:
+The app is running at http://trainwreck.herokuapp.com - feel free to have a
+look! You can click on "Make more wrecks!" to get to the scaffold, which will
+display a variety of errors if you do things wrong (or right).
 
-* Ruby version
+* Form validations throw an error instead of displaying a message - try
+  having a name that's too short or too long, or checking more than one
+  of the checkboxes.
+* There's a problem in the update action so editing an item and clicking
+  "Save" will also throw an error
+* Going onto the edit screen will silently send a message to Raygun noting
+  that someone, well, went onto the edit screen
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Have fun!
