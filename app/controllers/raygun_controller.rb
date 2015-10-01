@@ -3,7 +3,8 @@ class RaygunController < ApplicationController
   end
   
   def list
-    url = URI.parse('https://webapi.raygun.io/applications/890013125/errors/all')
+    # Easiest to request the list here and send it (avoids cross-domain errors etc.)
+    url = URI.parse('https://webapi.raygun.io/applications/890013125/errors/all?sortBy=recent')
     http = Net::HTTP.new(url.host, url.port)
     http.use_ssl = true
     raygun_response = http.get(url.request_uri, {
